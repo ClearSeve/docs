@@ -1,5 +1,5 @@
 # Alina 🎀
-<img src="./logo.png">
+<img src="/my-projects/logo.png">
 
 # Project description
 The Alina project is a project that is developed as part of the fight against child abuse on the Internet and more particularly on mirror networks like Tor.<br>
