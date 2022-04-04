@@ -70,3 +70,5 @@ defaults:
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+
+theme: jekyll-theme-midnight
