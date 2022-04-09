@@ -4,7 +4,7 @@ icon: apps
 ---
 # Choose OS
 ```mermaid
-%%{init: { 'theme': 'default' } }%%
+%%{init: { 'theme': 'dark' } }%%
 graph TD
 
     0[Choosing your OS]
