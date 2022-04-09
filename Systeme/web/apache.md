@@ -10,5 +10,5 @@ Apache est un systeme pour gérer des sites web sur  votre ordinateur / serveur 
 [!ref icon="rocket" text="Open website"](https://apache.org/)
 
 # Docs
-- [Creation de mon 1er site](./create-website)
-- [Plusieurs sites sur le même serveur](./multi-site)
+- [Creation de mon 1er site](./apache/create-website)
+- [Plusieurs sites sur le même serveur](./apache/multi-site)
