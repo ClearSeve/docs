@@ -9,29 +9,27 @@
     <meta name="generator" content="Retype 2.2">
 
     <!-- Primary Meta Tags -->
-    <title>Alice Doc</title>
-    <meta name="title" content="Alice Doc">
-    <meta name="description" content="non clairement tu n'es pas prêt" />
+    <title>Choose OS</title>
+    <meta name="title" content="Choose OS">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doc.cyberdream.space/">
-    <meta property="og:title" content="Alice Doc">
-    <meta property="og:description" content="non clairement tu n'es pas prêt">
+    <meta property="og:url" content="https://doc.cyberdream.space/système/os/">
+    <meta property="og:title" content="Choose OS">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://doc.cyberdream.space/">
-    <meta property="twitter:title" content="Alice Doc">
-    <meta property="twitter:description" content="non clairement tu n'es pas prêt">
+    <meta property="twitter:url" content="https://doc.cyberdream.space/système/os/">
+    <meta property="twitter:title" content="Choose OS">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=2.2.702812637954" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.2.702817326238" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.2.702812637954" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.2.702817326238" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.702812637954" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.702817326238" defer></script>
+    <script id="mermaid-js" type="text/javascript" src="/resources/js/mermaid.js?v=2.2" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -148,13 +146,74 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="alice-doc" class="break-words">
+<doc-anchor-target id="choose-os" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#alice-doc">#</doc-anchor-trigger>
-        <span>Alice Doc</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#choose-os">#</doc-anchor-trigger>
+        <span>Choose OS</span>
     </h1>
 </doc-anchor-target>
-<p>non clairement tu n&#x27;es pas prêt</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">%%{init: { 'theme': 'default' } }%%
+graph TD
+
+    0[Choosing your OS]
+
+    Q1(Do you fear technology ?)
+    
+    Q1y1(Is your daddy rich ?)
+
+    Q1n1(Do you care about privacy ?)
+    Q1y1n(Did you wanna pay for shit ?)
+
+    Q1y1y(Do you have a life ?)
+
+    QE(Dis you practice pentest ?)
+    QE1(Are you a noob ?)
+
+
+    APPLE[Apple]
+    CHROME[Chrome]
+    WINDOWS[Windows]
+    UBUNTU[Ubuntu]
+    ARCH[Arch]
+    GENTOO[Gentoo]
+    PARROT[Parrot]
+    KALI[Kali]
+    DEBIAN[Debian]
+    FEDORA[Fedora]
+    MINT[Mint]
+
+
+
+    0 --&gt; Q1;
+    Q1 --&gt; |yes|Q1y1;
+    Q1 --&gt; |no|Q1n1;
+    Q1n1 --&gt; |no|Q1y1n;
+    Q1n1 --&gt; |yes|Q1y1y;
+
+    Q1y1y --&gt;|yes|QE;
+    QE --&gt;|yes|QE1;
+
+
+    Q1y1 --&gt;|yes|APPLE;
+    Q1y1 --&gt;|no|CHROME;
+
+    Q1y1n --&gt;|yes|WINDOWS;
+    Q1y1n --&gt;|no|UBUNTU;
+
+    Q1y1y --&gt;|no|ARCH;
+    Q1y1y --&gt;|no|GENTOO;
+
+    QE --&gt;|no|FEDORA;
+    QE --&gt;|no|MINT;
+    QE --&gt;|no|DEBIAN;
+
+    QE1 --&gt;|yes|KALI;
+    QE1 --&gt;|no|PAROT;
+
+
+
+
+</pre></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -164,16 +223,16 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/système/web/apache/multi-site/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Multi Site</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/système/web/apache/home/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Apache 2</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -214,6 +273,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Alice Doc", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Choose OS", icon: "file", hasPrism: false, hasMermaid: true, hasMath: false }</script>
 </body>
 </html>
