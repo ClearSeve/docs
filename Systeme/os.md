@@ -60,7 +60,7 @@ graph TD
     QE -->|no|DEBIAN;
 
     QE1 -->|yes|KALI;
-    QE1 -->|no|PAROT;
+    QE1 -->|no|PARROT;
 
 
 
