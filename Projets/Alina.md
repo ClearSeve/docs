@@ -95,4 +95,4 @@ If you are not able to install me in the tutorial even with the help scripts inc
 - [Hecatonchire](https://github.com/hecarch)
 
 
-[!button variant="light" icon=":heart:" text="Sponsor" target="https://github.com/sponsors/Sn0wAlice"]
+[!button variant="light" icon=":heart:" text="Sponsor"](https://github.com/sponsors/Sn0wAlice)
