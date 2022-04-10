@@ -1,6 +1,6 @@
 ---
 label: Web Proxy
-icon: home
+icon: dot
 ---
 
 # Let's build little web proxy
