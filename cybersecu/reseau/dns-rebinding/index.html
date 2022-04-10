@@ -29,11 +29,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=2.2.702899642539" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.2.702910548723" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.2.702899642539" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.2.702910548723" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.702899642539" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.702910548723" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -183,6 +183,20 @@
     </h2>
 </doc-anchor-target>
 <p>Dans cette situation et dans une raison de flème de développer un serveur DNS a la main, je vous recommande <a href="https://lock.cmpxchg8b.com/rebinder.html">cet outils</a>. Après bien sur si vous voulez faire comme moi, faut dev le serveur à la mano :p</p>
+<doc-anchor-target id="exemple">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exemple">#</doc-anchor-trigger>
+        <span>Exemple:</span>
+    </h1>
+</doc-anchor-target>
+<p>Imaginons un script qui n&#x27;est accessible que depuis l&#x27;ip <code v-pre>127.0.0.1</code> par rapport au serveur web... Oui c&#x27;est déjà mal barré MAIS tout est encore possible.<br>
+En effet, imaginons que le site permette des iframes et nous choisissons nous-mêmes les URL, oui Bah la c&#x27;est fini pour le site.... <br>
+Pourquoi ? simple, car on sait faire du dns rebinding !</p>
+<p>On a besoin de 2 Ip, la 1er c&#x27;est <code v-pre>127.0.0.1</code> et la 2e n’importe quelle ip qui marche, pour l&#x27;exemple <code v-pre>8.8.8.8</code>. Nous allons utiliser <a href="https://lock.cmpxchg8b.com/rebinder.html">cet outils</a> pour générer une URL. Nous obtenons: <br>
+<code v-pre>http://7f000001.08080808.rbndr.us</code><br>
+Rajoutons quelques dingueries de ports et le path <code v-pre>/admin</code>:<br>
+<code v-pre>http://7f000001.08080808.rbndr.us:66666/admin</code><br></p>
+<p>Il ne reste plus qu&#x27;à spammer comme des gros porcs le bouton &quot;get&quot; et attendre que l&#x27;attaque se passe.</p>
 
                                 
                                 <!-- Required only on API pages -->
