@@ -1,6 +1,6 @@
 ---
 label: Creation simple
-icon: gear
+icon: diamond
 ---
 # Creation de mon 1er site
 Cet article est là pour vous apprendre à mettre en place votre 1er site internet à l'aide d'apache sur votre plateforme d'hébergement.

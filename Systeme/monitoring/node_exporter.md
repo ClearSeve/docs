@@ -31,7 +31,7 @@ Oui il faut créer le système à la mano. Éditez le fichier suivant:
 sudo nano /etc/systemd/system/node_exporter.service
 ```
 et placez-le contente suivant à l'intérieur: 
-```conf
+```
 [Unit]
 Description=Node Exporter
 After=network.target

@@ -1,5 +1,5 @@
 ---
 label: Multi Site
-icon: gear
+icon: diamond
 ---
 # Création d'une configuration multi sites

@@ -38,7 +38,7 @@ $ sudo pacman grafana
 sudo nano /etc/yum.repos.d/grafana.repo
 ```
 Add this
-```conf
+```
 [grafana]
 name=grafana
 baseurl=https://packages.grafana.com/enterprise/rpm
