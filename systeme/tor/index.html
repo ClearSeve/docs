@@ -9,21 +9,23 @@
     <meta name="generator" content="Retype 2.2">
 
     <!-- Primary Meta Tags -->
-    <title>Network</title>
-    <meta name="title" content="Network">
-    <meta name="description" content="DNS rebinding" />
+    <title>Configurer un site tor (linux)</title>
+    <meta name="title" content="Configurer un site tor (linux)">
+    <meta name="description" content="Bon je suppose que vous vous doutez qu'on doit commencer par l'installer 👾" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doc.cyberdream.space/cybersecu/reseau/">
-    <meta property="og:title" content="Network">
-    <meta property="og:description" content="DNS rebinding">
+    <meta property="og:url" content="https://doc.cyberdream.space/systeme/tor/">
+    <meta property="og:title" content="Configurer un site tor (linux)">
+    <meta property="og:description" content="Bon je suppose que vous vous doutez qu'on doit commencer par l'installer 👾">
+    <meta property="og:image" content="https://doc.cyberdream.space/assets/doc/system/tor.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://doc.cyberdream.space/cybersecu/reseau/">
-    <meta property="twitter:title" content="Network">
-    <meta property="twitter:description" content="DNS rebinding">
+    <meta property="twitter:url" content="https://doc.cyberdream.space/systeme/tor/">
+    <meta property="twitter:title" content="Configurer un site tor (linux)">
+    <meta property="twitter:description" content="Bon je suppose que vous vous doutez qu'on doit commencer par l'installer 👾">
+    <meta property="twitter:image" content="https://doc.cyberdream.space/assets/doc/system/tor.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -148,16 +150,55 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="network" class="break-words">
+<p><figure class="content-center">
+    <img src="/assets/doc/system/tor.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="configurer-un-site-tor-linux" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#network">#</doc-anchor-trigger>
-        <span>Network</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configurer-un-site-tor-linux">#</doc-anchor-trigger>
+        <span>Configurer un site tor (linux)</span>
     </h1>
 </doc-anchor-target>
-<ul>
-<li><a href="dns-rebinding/">DNS rebinding</a></li>
-<li><a href="ftp/">FTP Auth</a></li>
-</ul>
+<p>Bon je suppose que vous vous doutez qu&#x27;on doit commencer par l&#x27;installer <span class="docs-emoji">&#x1F47E;</span></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">sudo apt-get install tor</code></pre>
+</doc-codeblock></div>
+<p>BREF commençons. Pour cela il vous faut aller dans les fichier de confs</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">cd /etc/tor/</code></pre>
+</doc-codeblock></div>
+<p>Toutes les configurations sont dans le fichier torrc c&#x27;est la raison pour laquelle nous allons l&#x27;éditer.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">sudo nano torrc</code></pre>
+</doc-codeblock></div>
+<p>Il vous faut par la suite descendre et aller aux lignes:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">HiddenServiceDir /var/lib/tor/hidden_service/
+HiddenServicePort 80 127.0.0.1:80</code></pre>
+</doc-codeblock></div>
+<p>C&#x27;est là que toutes les configurations de vos sites tor sont faites. Il vous suffit de créer autant de configuration que de site web tor dont vous avez besoin <span class="docs-emoji">&#x1F4C0;</span>. Après avoir supprimé les 2 lignes du site par défaut, je vous propose une configuration simple comme suit:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none"># Mon Site 1
+HiddenServiceDir /var/lib/tor/site1/
+HiddenServicePort 80 127.0.0.1:80
+
+# Mon Site 2
+HiddenServiceDir /var/lib/tor/site2/
+HiddenServicePort 80 127.0.0.1:80
+</code></pre>
+</doc-codeblock></div>
+<p>Maintenant que les configurations sont faites, il suffit de redémarrer le service tor.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">sudo systemctl reload tor</code></pre>
+</doc-codeblock></div>
+<p>S&#x27;il n&#x27;y a pas d&#x27;erreur c&#x27;est que vos sites web sont en ligne. Maintenant, il faut aller récupérer leur nom de domaine que Tor vous a attribué. Pour cela il faut aller nano le fichier ou cela est stocké.</p>
+<p>Le fichier est dans: <b>HiddenServiceDir / hostname</b>donc dans le cas de mon site1</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">sudo nano /var/lib/tor/site1/hostname</code></pre>
+</doc-codeblock></div>
+<p>Il ne vous reste plus que à copier l&#x27;url et votre site est online. <span class="docs-emoji">&#x1F52E;</span></p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -167,23 +208,16 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/systeme/os/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Alice Doc 🎐</span>
+                                                <span class="block mt-1">Choose OS</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/cybersecu/reseau/dns-rebinding/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">DNS Rebinding</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -224,6 +258,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Network", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Tor", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

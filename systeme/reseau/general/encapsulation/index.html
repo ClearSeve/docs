@@ -9,21 +9,23 @@
     <meta name="generator" content="Retype 2.2">
 
     <!-- Primary Meta Tags -->
-    <title>Network</title>
-    <meta name="title" content="Network">
-    <meta name="description" content="DNS rebinding" />
+    <title>Encapsulation</title>
+    <meta name="title" content="Encapsulation">
+    <meta name="description" content="Au fur et à mesure que les données sont transmises à chaque couche du modèle, plus d'informations contenant des détails spécifiques à la couche en..." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doc.cyberdream.space/cybersecu/reseau/">
-    <meta property="og:title" content="Network">
-    <meta property="og:description" content="DNS rebinding">
+    <meta property="og:url" content="https://doc.cyberdream.space/systeme/reseau/general/encapsulation/">
+    <meta property="og:title" content="Encapsulation">
+    <meta property="og:description" content="Au fur et à mesure que les données sont transmises à chaque couche du modèle, plus d'informations contenant des détails spécifiques à la couche en...">
+    <meta property="og:image" content="https://doc.cyberdream.space/assets/doc/res/encapsulation.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://doc.cyberdream.space/cybersecu/reseau/">
-    <meta property="twitter:title" content="Network">
-    <meta property="twitter:description" content="DNS rebinding">
+    <meta property="twitter:url" content="https://doc.cyberdream.space/systeme/reseau/general/encapsulation/">
+    <meta property="twitter:title" content="Encapsulation">
+    <meta property="twitter:description" content="Au fur et à mesure que les données sont transmises à chaque couche du modèle, plus d'informations contenant des détails spécifiques à la couche en...">
+    <meta property="twitter:image" content="https://doc.cyberdream.space/assets/doc/res/encapsulation.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -148,16 +150,18 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="network" class="break-words">
+<doc-anchor-target id="encapsulation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#network">#</doc-anchor-trigger>
-        <span>Network</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#encapsulation">#</doc-anchor-trigger>
+        <span>Encapsulation</span>
     </h1>
 </doc-anchor-target>
-<ul>
-<li><a href="dns-rebinding/">DNS rebinding</a></li>
-<li><a href="ftp/">FTP Auth</a></li>
-</ul>
+<p>Au fur et à mesure que les données sont transmises à chaque couche du modèle, plus d&#x27;informations contenant des détails spécifiques à la couche en question sont ajoutées au début de la transmission. À titre d&#x27;exemple, l&#x27;en-tête ajouté par la couche réseau inclurait des éléments tels que les adresses IP source et de destination, et l&#x27;en-tête ajouté par la couche de transport inclurait (entre autres) des informations spécifiques au protocole utilisé. La couche liaison de données ajoute également un élément à la fin de la transmission, qui est utilisé pour vérifier que les données n&#x27;ont pas été corrompues lors de la transmission; cela a également l&#x27;avantage supplémentaire d&#x27;une sécurité accrue, car les données ne peuvent pas être interceptées et falsifiées sans casser la remorque. L&#x27;ensemble de ce processus est appelé encapsulation; le processus par lequel les données peuvent être envoyées d&#x27;un ordinateur à un autre.
+<figure class="content-center">
+    <img src="/assets/doc/res/encapsulation.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -167,20 +171,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/systeme/reseau/general/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Alice Doc 🎐</span>
+                                                <span class="block mt-1">Notions</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/cybersecu/reseau/dns-rebinding/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/systeme/reseau/general/trame-v2/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">DNS Rebinding</span>
+                                                <span class="block mt-1">Modèle Ethernet V​2</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -224,6 +228,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Network", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Encapsulation", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
