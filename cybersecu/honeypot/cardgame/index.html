@@ -9,21 +9,21 @@
     <meta name="generator" content="Retype 2.2">
 
     <!-- Primary Meta Tags -->
-    <title>Monitoring</title>
-    <meta name="title" content="Monitoring">
-    <meta name="description" content="Mise en place d'outils de monitoring de votre système" />
+    <title>Card Game</title>
+    <meta name="title" content="Card Game">
+    <meta name="description" content="Avoir quelques notions en cybersécurité web et avoir envie de ruiner quelques espoirs ? quelle beeelllleeee vie." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doc.cyberdream.space/systeme/monitoring/">
-    <meta property="og:title" content="Monitoring">
-    <meta property="og:description" content="Mise en place d'outils de monitoring de votre système">
+    <meta property="og:url" content="https://doc.cyberdream.space/cybersecu/honeypot/cardgame/">
+    <meta property="og:title" content="Card Game">
+    <meta property="og:description" content="Avoir quelques notions en cybersécurité web et avoir envie de ruiner quelques espoirs ? quelle beeelllleeee vie.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://doc.cyberdream.space/systeme/monitoring/">
-    <meta property="twitter:title" content="Monitoring">
-    <meta property="twitter:description" content="Mise en place d'outils de monitoring de votre système">
+    <meta property="twitter:url" content="https://doc.cyberdream.space/cybersecu/honeypot/cardgame/">
+    <meta property="twitter:title" content="Card Game">
+    <meta property="twitter:description" content="Avoir quelques notions en cybersécurité web et avoir envie de ruiner quelques espoirs ? quelle beeelllleeee vie.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -32,6 +32,7 @@
     <script type="text/javascript" src="/resources/js/config.js?v=2.2.704477934232" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
     <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.704477934232" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=2.2.704477934232" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -148,17 +149,66 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="monitoring" class="break-words">
+<doc-anchor-target id="card-game" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#monitoring">#</doc-anchor-trigger>
-        <span>Monitoring</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#card-game">#</doc-anchor-trigger>
+        <span>Card Game</span>
     </h1>
 </doc-anchor-target>
-<p>Mise en place d&#x27;outils de monitoring de votre système</p>
-<ul>
-<li><a href="grafana/">Grafana</a></li>
-<li><a href="node_exporter/">Node expoter</a></li>
-</ul>
+<p>Avoir quelques notions en cybersécurité web et avoir envie de ruiner quelques espoirs ? quelle beeelllleeee vie. Perso, j&#x27;aime recevoir un message de mon bot:<br>
+<code v-pre>Someone has been trolled &quot;troll name&quot; | IP: X.X.X.X</code><br>
+Mais comment mettre le système en place ? c&#x27;est assez simple.</p>
+<doc-anchor-target id="1-formulaire-caché">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-formulaire-caché">#</doc-anchor-trigger>
+        <span>1. Formulaire caché</span>
+    </h2>
+</doc-anchor-target>
+<p>C&#x27;est probablement la protection la plus connue, mais elle marche assez bien ! Alors en quoi cela consiste ? tout simplement cacher un champ dans un formulaire. <br>
+Alors pourquoi ? c&#x27;est assez simple. Un bot simple qui tente de remplir les formulaires pour tester la sécurité remplit tous les champs du formulaire avec des données crédibles. Mais ils ne sont pas capables de détecter si un champ est caché ou non !<br>
+Il ne vous reste plus qu&#x27;a ne pas traité la demande de formulaire dont ce fameux champ est rempli. Rares sont les utilisateurs qui remplissent un champ qui n&#x27;existe pas xD</p>
+<doc-anchor-target id="comment-faire-">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comment-faire-">#</doc-anchor-trigger>
+        <span>Comment faire ?</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-markup"><code v-pre class="language-markup">&lt;form action=&quot;/submit&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;nom&quot; placeholder=&quot;Nom&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;prenom&quot; placeholder=&quot;Prenom&quot;&gt;
+    &lt;input type=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Email&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;cache&quot; class=&quot;jesuiscache&quot; placeholder=&quot;Nom du chat&quot;&gt;
+    &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+</doc-codeblock></div>
+<blockquote>
+<p>Tiens ?!! c&#x27;est étonnant son chat s&#x27;appelle &quot;ibjunjob&quot;</p>
+</blockquote>
+<doc-anchor-target id="2-extraction-git">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-extraction-git">#</doc-anchor-trigger>
+        <span>2. Extraction .git</span>
+    </h2>
+</doc-anchor-target>
+<p>Wait tu utilises pas git pour gérer ton code source ! Érudie !! <br>
+Enfin bref, si tu es censé tu utilise git pour gérer ton code source. Et devine quoi ? ce n&#x27;est pas une configuration 403 dans <code v-pre>/.git/</code> qui va m&#x27;arrêter<br>
+Bha quoi ? vous n&#x27;êtes pas au courant pour la reconstitution de git ? attendez je vous montre. Tu cliques <a href="https://github.com/lijiejie/GitHack">ici</a> et avec une simple commande dans ton terminal MAGIE ! Mais bon j&#x27;espère que cela ne marche pas sur ton site. <br>
+Et si on le faisait fonctionner sur ton site ? Bah oui réfléchit 2 min. Git stocke tout, donc pourquoi on d&#x27;upload pas un fichier <code v-pre>.git</code> d&#x27;un autre projet à la place ? un script débile, un faux site ou un rick roll tant qu&#x27;à y être. <br>
+Le hacker, il tente, sa marche, il se dit &quot;jackpot&quot;, il ouvre groooooss trollllll</p>
+<doc-anchor-target id="comment-faire--1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comment-faire--1">#</doc-anchor-trigger>
+        <span>Comment faire ?</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>creer un projet git</li>
+<li>développe ton script troll</li>
+<li>commit</li>
+<li>upload le dossier sur ton site</li>
+<li>attand qu&#x27;un hacker tombe dans le panneau</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
@@ -168,20 +218,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/projets/alina/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/cybersecu/honeypot/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Alina</span>
+                                                <span class="block mt-1">Honey​Pot</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/systeme/monitoring/grafana/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/cybersecu/reseau/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Grafana</span>
+                                                <span class="block mt-1">Network</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -225,6 +275,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Monitoring", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Card Game", icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
