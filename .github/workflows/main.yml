@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  getProjetREADME: 
+  runSimpleUpdate: 
     name: Get all the projet readme
     runs-on: ubuntu-latest
     strategy:
@@ -34,7 +34,7 @@ jobs:
   
   publish:
     name: Publish to the retype branch
-    needs: [getProjetREADME, getOSINTinfo]
+    needs: [runSimpleUpdate]
 
     runs-on: ubuntu-latest
 
