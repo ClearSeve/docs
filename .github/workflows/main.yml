@@ -22,39 +22,15 @@ jobs:
         uses: denolib/setup-deno@v2
         with:
           deno-version: ${{ matrix.deno-version }}
-      - name: Executing the script
+      - name: Executing "Update project readme"
         run: deno run -A --unstable --no-check ./script/updateProjetReadme.ts
-      - uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          BRANCH_NAME: 'main' 
-  
-  getOSINTinfo: 
-    name: Get all osint stuff
-    runs-on: ubuntu-latest
-    needs: [getProjetREADME]
-
-    strategy:
-      matrix:
-        deno-version: [1.4.0]
-
-    steps:
-      - uses: linhbn123/rebase-pull-requests@v1.0.1
-      - name: Git Checkout Deno Module
-        uses: actions/checkout@v2
-      - uses: linhbn123/rebase-pull-requests@v1.0.1
-      - name: Use Deno Version ${{ matrix.deno-version }}
-        uses: denolib/setup-deno@v2
-        with:
-          deno-version: ${{ matrix.deno-version }}
-      - name: Executing the script
+      - name: Executing "Update osint stuff"
         run: deno run -A --unstable --no-check ./script/osint/getAll.ts
       - uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
           BRANCH_NAME: 'main' 
-  
   
   publish:
     name: Publish to the retype branch
