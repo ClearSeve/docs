@@ -6,7 +6,6 @@ on:
       - main
 
 jobs:
-
   getProjetREADME: 
     name: Get all the projet readme
     runs-on: ubuntu-latest

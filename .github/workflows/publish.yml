@@ -6,10 +6,8 @@ on:
       - build
 
 jobs:
-
   publish:
     name: Publish to the retype branch
-    needs: getProjetREADME
 
     runs-on: ubuntu-latest
 
