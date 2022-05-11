@@ -29,11 +29,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=2.2.705587898359" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.2.705591650914" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.2.705587898359" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.2.705591650914" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.705587898359" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.705591650914" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -210,6 +210,60 @@ Il vous faut uploader vos fichiers de sites statiques sur votre serveur. Probabl
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/var/www/html/</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+<doc-tab id="arch-based">
+<template #title>Arch based</template>
+<doc-anchor-target id="step-1-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-1">#</doc-anchor-trigger>
+        <span>Step 1</span>
+    </h2>
+</doc-anchor-target>
+<p>La première étape est de bien évidemment installer le package sur votre système.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">sudo pacman -Sy apache2</code></pre>
+</doc-codeblock></div>
+<p>Après avoir fait cette installation apache2 devrait déjà être en marche. Pour le vérifier il faut aller le vérifier lui-même en allant à l&#x27;adresse suivante:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">http://YOUR_PUBLIC_IP/</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Pour du travail en local, il est possible d&#x27;utiliser 127.0.0.1</p>
+        </div>
+    </div>
+</div>
+<p>Bref vous devriez avoir une page similaire à celle ci-dessous
+<figure class="content-center">
+    <img src="/assets/doc/apache2/create_ok.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="step-2-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-1">#</doc-anchor-trigger>
+        <span>Step 2</span>
+    </h2>
+</doc-anchor-target>
+<p>Dans le cas d&#x27;un site statique, il ne vous reste plus que cette étape !<br>
+Il vous faut uploader vos fichiers de sites statiques sur votre serveur. Probablement en utilisant un logiciel FTP/SFTP comme <a href="https://filezilla-project.org/">filezilla</a></p>
+<p>Vous devez uploader vos fichiers dans le répertoire par défaut, c’est-à-dire:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/var/www/html/</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -244,12 +298,6 @@ Il vous faut uploader vos fichiers de sites statiques sur votre serveur. Probabl
         </div>
     </div>
 </div>
-</doc-tab>
-<doc-tab id="arch-based">
-<template #title>Arch based</template>
-<p>todo</p>
-</doc-tab>
-</doc-tabs>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
     <div class="flex items-center text-blue-500 dark:text-blue-400">

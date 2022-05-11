@@ -9,23 +9,21 @@
     <meta name="generator" content="Retype 2.2">
 
     <!-- Primary Meta Tags -->
-    <title>Ping</title>
-    <meta name="title" content="Ping">
-    <meta name="description" content="À ce stade, j'espère que toute la théorie a du sens et que vous comprenez maintenant les modèles de base des réseaux informatiques." />
+    <title>Tools</title>
+    <meta name="title" content="Tools">
+    <meta name="description" content="Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doc.cyberdream.space/systeme/reseau/outils/ping/">
-    <meta property="og:title" content="Ping">
-    <meta property="og:description" content="À ce stade, j'espère que toute la théorie a du sens et que vous comprenez maintenant les modèles de base des réseaux informatiques.">
-    <meta property="og:image" content="https://doc.cyberdream.space/assets/doc/res/pingpong.gif">
+    <meta property="og:url" content="https://doc.cyberdream.space/cybersecu/osint/tools/">
+    <meta property="og:title" content="Tools">
+    <meta property="og:description" content="Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://doc.cyberdream.space/systeme/reseau/outils/ping/">
-    <meta property="twitter:title" content="Ping">
-    <meta property="twitter:description" content="À ce stade, j'espère que toute la théorie a du sens et que vous comprenez maintenant les modèles de base des réseaux informatiques.">
-    <meta property="twitter:image" content="https://doc.cyberdream.space/assets/doc/res/pingpong.gif">
+    <meta property="twitter:url" content="https://doc.cyberdream.space/cybersecu/osint/tools/">
+    <meta property="twitter:title" content="Tools">
+    <meta property="twitter:description" content="Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -150,35 +148,13 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="ping" class="break-words">
+<doc-anchor-target id="tools" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ping">#</doc-anchor-trigger>
-        <span>Ping</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tools">#</doc-anchor-trigger>
+        <span>Tools</span>
     </h1>
 </doc-anchor-target>
-<p>À ce stade, j&#x27;espère que toute la théorie a du sens et que vous comprenez maintenant les modèles de base des réseaux informatiques.Nous allons examiner certains des outils de mise en réseau en ligne de commande que nous pouvons utiliser dans des applications pratiques. Beaucoup de ces outils fonctionnent sur d&#x27;autres systèmes d&#x27;exploitation, mais par souci de simplicité, je vais supposer que vous utilisez Linux. Le premier outil que nous allons examiner sera la commande ping.</p>
-<p>La commande ping est utilisée lorsque nous voulons tester si une connexion à une ressource distante est possible. Il s&#x27;agit généralement d&#x27;un site Web sur Internet, mais il peut également s&#x27;agir d&#x27;un ordinateur de votre réseau domestique si vous souhaitez vérifier s&#x27;il est correctement configuré. Ping fonctionne en utilisant le protocole ICMP, qui est l&#x27;un des protocoles TCP / IP légèrement moins connus qui ont été mentionnés précédemment. Le protocole ICMP fonctionne sur la couche réseau du modèle OSI, et donc sur la couche Internet du modèle TCP / IP. La syntaxe de base pour ping est:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">ping &quot;cible&quot; </code></pre>
-</doc-codeblock></div>
-<p>Dans cet exemple, nous utilisons le ping pour tester si une connexion réseau à Google est possible:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">└──╼ $ping google.com
-PING google.com (142.250.179.78) 56(84) bytes of data.
-64 octets de par21s19-in-f14.1e100.net (142.250.179.78) : icmp_seq=1 ttl=121 temps=12.4 ms
-64 octets de par21s19-in-f14.1e100.net (142.250.179.78) : icmp_seq=2 ttl=121 temps=12.9 ms
-64 octets de par21s19-in-f14.1e100.net (142.250.179.78) : icmp_seq=3 ttl=121 temps=12.8 ms
-64 octets de par21s19-in-f14.1e100.net (142.250.179.78) : icmp_seq=4 ttl=121 temps=12.4 ms
-
---- statistiques ping google.com ---
-4 paquets transmis, 4 reçus, 0 % paquets perdus, temps 3004 ms
-rtt min/avg/max/mdev = 12.406/12.628/12.885/0.223 ms</code></pre>
-</doc-codeblock></div>
-<p><figure class="content-center">
-    <img src="/assets/doc/res/pingpong.gif" alt="" />
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
+<p>Une liste d&#x27;outils qui peut être utilisé dans le cadre de recherches OSINT</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -188,20 +164,20 @@ rtt min/avg/max/mdev = 12.406/12.628/12.885/0.223 ms</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/systeme/reseau/outils/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/cybersecu/osint/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Outils</span>
+                                                <span class="block mt-1">Osint</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/systeme/reseau/outils/traceroute/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/dev/simple/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Traceroute</span>
+                                                <span class="block mt-1">Simple code</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -245,6 +221,6 @@ rtt min/avg/max/mdev = 12.406/12.628/12.885/0.223 ms</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Ping", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Tools", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
