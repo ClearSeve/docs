@@ -3,25 +3,26 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - build
 
 jobs:
-  getProjetREADME: 
-    name: Get all the projet readme
+
+  publish:
+    name: Publish to the retype branch
+    needs: getProjetREADME
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: linhbn123/rebase-pull-requests@v1.0.1
-      - name: Git Checkout Deno Module
-        uses: actions/checkout@v2
-      - uses: linhbn123/rebase-pull-requests@v1.0.1
-      - name: Use Deno Version ${{ matrix.deno-version }}
-        uses: denolib/setup-deno@v2
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-dotnet@v1
         with:
-          deno-version: ${{ matrix.deno-version }}
-      - name: Executing the script
-        run: deno run -A --unstable --no-check ./script/updateProjetReadme.ts
-      - uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: 'build'
+          dotnet-version: 6.0.x
+
+      - uses: retypeapp/action-build@latest
+
+      - uses: retypeapp/action-github-pages@latest
+        with:
+          branch: retype
+          update-branch: true
