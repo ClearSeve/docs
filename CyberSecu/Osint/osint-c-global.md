@@ -4,7 +4,10 @@ icon: diamond
 ---
 
 # Global
-Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT<br><br>## Albania
+Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT<br><br>
+
+
+## Albania
 <img src="https://f.start.me/qkr.gov.al" heigth="12" width="12"> [Albania REGISTRY](http://www.qkr.gov.al/) National Business Center (Qendra Kombetare e Biznesit)
 Albanisch, Englisch
 kostenlos

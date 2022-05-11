@@ -4,7 +4,10 @@ icon: diamond
 ---
 
 # Canada
-Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT au Canada<br><br>## TOOLS
+Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT au Canada<br><br>
+
+
+## TOOLS
 <img src="https://f.start.me/cryptpad.fr" heigth="12" width="12"> [Cryptpad.fr](https://cryptpad.fr/) <br>
 <img src="https://f.start.me/gchq.github.io" heigth="12" width="12"> [CyberChef](https://gchq.github.io/CyberChef/) <br>
 <img src="https://f.start.me/pad.riseup.net" heigth="12" width="12"> [Pad.riseup.net](https://pad.riseup.net/) <br>
