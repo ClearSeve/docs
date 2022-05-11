@@ -3,7 +3,7 @@ label: Awesome Osint Tools
 icon: diamond
 ---
 
-# Canada
+# Awesome tools
 Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT# Awesome OSINT [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 [<img src="https://github.com/jivoi/awesome-osint/raw/master/osint_logo.png" align="right" width="100">](https://github.com/jivoi/awesome-osint)

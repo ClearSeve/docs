@@ -1,9 +1,9 @@
 ---
-label: Tools
+label: SANS Osint Tools
 icon: diamond
 ---
 
-# Tools
+# SANS
 Une liste d'outils qui peut être utilisé dans le cadre de recherches OSINT## Basic Tools
 <img src="https://f.start.me/radaris.com" heigth="12" width="12"> [Radaris - People search - USA](https://radaris.com/) <br>
 <img src="https://f.start.me/spytox.com" heigth="12" width="12"> [Spytox - Number search](https://www.spytox.com/) <br>
