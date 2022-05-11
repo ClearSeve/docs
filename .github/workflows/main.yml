@@ -9,6 +9,7 @@ jobs:
 
   getProjetREADME: 
     name: Get all the projet readme
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         deno-version: [1.4.0]
