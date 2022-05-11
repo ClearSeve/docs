@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - build
+      - main
 
 jobs:
   getProjetREADME: 
@@ -27,4 +27,24 @@ jobs:
       - uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
           BRANCH_NAME: 'main' 
+  publish:
+    name: Publish to the retype branch
+    needs: getProjetREADME
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - uses: retypeapp/action-build@latest
+
+      - uses: retypeapp/action-github-pages@latest
+        with:
+          branch: retype
+          update-branch: true
